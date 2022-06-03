@@ -5,6 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Language from HTML</title>
+    <script>
+      function showDetails(animal) {
+        var animalType = animal.getAttribute("data-animal-type");
+        alert("The " + animal.innerHTML + " is a " + animalType + ".");
+      }
+    </script>
   </head>
   <body>
     <ol>
@@ -36,6 +42,39 @@
         ><li>Paragraph ini menggunakan sebuah Atribut <em>contenteditable</em> dan brower mungkin bisa mengedit sebuah teks!</li></strong
       >
       <p contenteditable="true">Ini adalah sebuah Paragraph, Kalian bisa mengedit Paragraph disini!</p>
+      <br />
+      <strong
+        ><li>Paragraph ini menggunakan sebuah Atribut <em>data-*</em> dan mungkin membutuhkan sebuah js untuk membantu melihat data-* itu aktif!</li></strong
+      >
+      <h1>Species</h1>
+      <p>Click on a species to see what type it is:</p>
+      <ul>
+        <li onclick="showDetails(this)" id="owl" data-animal-type="bird">Owl</li>
+        <li onclick="showDetails(this)" id="salmon" data-animal-type="fish">Salmon</li>
+        <li onclick="showDetails(this)" id="tarantula" data-animal-type="spider">Tarantula</li>
+      </ul>
+      <br />
+      <strong
+        ><li>Paragraph ini menggunakan sebuah Atribut <em>draggable</em> dan mungkin seperti dragging dalam Foto</li></strong
+      >
+      <p draggable="true">Paragraph ini bisa di drag layaknya Foto.</p>
+      <br />
+      <strong
+        ><li>Paragraph ini menggunakan sebuah Atribut <em>hidden</em> dan mungkin seperti menyembunyikan teks</li></strong
+      >
+      <p hidden>This paragraph should be hidden.</p>
+      <p>This is a visible paragraph.</p>
+      <br />
+      <strong
+        ><li>Paragraph ini menggunakan sebuah Atribut <em>spellcheck</em> dan mungkin Menentukan apakah elemen harus diperiksa ejaannya dan tata bahasanya atau tidak.</li></strong
+      >
+      <p contenteditable="true" spellcheck="true">This is a paragraph.</p>
+      <strong
+        ><li>Paragraph ini menggunakan sebuah Atribut <em>tabindex</em> dan Menentukan urutan dari suatu elemen.</li></strong
+      >
+      <a href="https://www.w3schools.com/" tabindex="2">W3Schools</a>
+      <a href="http://www.google.com/" tabindex="1">Google</a>
+      <a href="http://www.microsoft.com/" tabindex="3">Microsoft</a>
     </ol>
   </body>
 </html>
